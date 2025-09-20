@@ -49,7 +49,6 @@ SEED_KEYS = [
     "an4xirwPR5g7d7i9ufU3Ag",
 ]
 
-
 # ฟังก์ชันสุ่ม key
 def random_key(length=22):
     chars = string.ascii_letters + string.digits + "-_"

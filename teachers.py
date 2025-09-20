@@ -18,16 +18,23 @@ async def fetch_and_save(session, i, sem):
                         f.write(data)
                     print(f"[✓] {i}.png โหลดสำเร็จ")
                 else:
-                    print(f"[x] {i}.png ไม่มีไฟล์ (status {resp.status})")
+                    print(f"[x] {i}.png ไม่มีรูป (สถานะ {resp.status})")
         except Exception as e:
             print(f"[!] Error {i}: {e}")
 
-async def main():
+async def main(ids=None):
     sem = asyncio.Semaphore(1000)  # 🔥 เพิ่มเป็น 500 พร้อมกัน
     async with aiohttp.ClientSession() as session:
-        # เปลี่ยน range ได้ตามที่ต้องการ เช่น 999 ถึง 9999
-        tasks = [fetch_and_save(session, i, sem) for i in range(00000, 99999)]
+        if ids is None:
+            tasks = [fetch_and_save(session, i, sem) for i in range(00000, 99999)]
+        else:
+            tasks = [fetch_and_save(session, i, sem) for i in ids]
         await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    choice = input("พิมพ์รหัสครู หรือ Enter เพื่อโหลดทั้งหมด: ").strip()
+    if choice:
+        ids = [int(i) for i in choice.split(",") if i.strip().isdigit()]
+        asyncio.run(main(ids))
+    else:
+        asyncio.run(main())

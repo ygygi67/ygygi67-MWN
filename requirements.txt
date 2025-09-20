@@ -1,0 +1,23 @@
+# Data processing and analysis
+pandas>=1.3.0
+requests>=2.25.0
+
+# Google Sheets integration
+google-auth>=2.0.0
+google-auth-oauthlib>=0.4.0
+google-auth-httplib2>=0.1.0
+gspread>=5.0.0
+
+# Async HTTP requests
+aiohttp>=3.8.0
+
+# Built-in modules (no installation needed):
+# argparse - built-in
+# sys - built-in  
+# os - built-in
+# re - built-in
+# asyncio - built-in (Python 3.4+)
+# random - built-in
+# string - built-in
+# json - built-in
+# datetime - built-in
