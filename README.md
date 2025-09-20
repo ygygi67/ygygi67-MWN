@@ -41,12 +41,17 @@ git clone https://github.com/ygygi67/ygygi67-MWN/
 cd ygygi67-MWN
 ```
 ```bash
-python key.py
-```
-```bash
 pip install -r requirements.txt
 ```
+มาถึงตรงนี้สามารถรันโค้ดที่มีให้ตามใจชอบ เช่น
+```bash
+python key.py
+```
 
+## วิธีลบไฟล์ใน Termux (remove)
+- ``` rm ``` ตามด้วยชื่อไฟล์
+- ```rm -r```  ตามด้วยชื่อโฟลเดอร์
+- ```rm -rf``` เพื่อลบโฟลเดอร์พร้อมเนื้อหาแบบบังคับโดยไม่ถามยืนยัน
 ### แค่อยากใส่มาเดียวมาแก้
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
